@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            background-color: #e9b880;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        .login-box h2 {
+            margin-bottom: 20px;
+        }
+
+        .login-box input[type="email"],
+        .login-box input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .login-box button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            /* Smooth transition */
+        }
+
+        .login-box button:hover {
+            background-color: #0056b3;
+            /* Darker shade of blue on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <h2>Welcome</h2>
+        <input id="email" type="email" placeholder="Email" required>
+        <input id="password" type="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <script>
+        document.getElementById('password').addEventListener('input', function () {
+            var password = this.value;
+            if (password === "1234") {
+                this.style.borderColor = "green";
+            } else {
+                this.style.borderColor = "red";
+            }
+        });
+
+        function login() {
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+
+            if (email === "" || password === "") {
+                alert("Please enter both email and password.");
+                return;
+            }
+
+
+            alert("Email: " + email + "\nPassword: " + password);
+        }
+    </script>
+</body>
+
+</html>
